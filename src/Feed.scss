@@ -8,8 +8,8 @@
     padding: 16px;
     // padding-bottom: 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
     align-items: center;
+    border: 1px solid lightgray;
 }
 .feed-avatar{
     margin-right: 10px;
@@ -38,5 +38,12 @@
 }
 .feed-inputOptions{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+}
+.feed-line{
+    height: 1px;
+    background-color: lightgray;
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }

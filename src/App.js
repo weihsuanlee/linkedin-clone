@@ -1,10 +1,11 @@
-import './App.css'
+import './App.scss'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Header from './Header'
 import Login from './Login'
 import Sidebar from './Sidebar'
 import Feed from './Feed'
+import Widgets from './Widgets'
 import { selectUser, logout, login } from './features/userSlice'
 import { auth } from './firebase'
 
@@ -40,6 +41,7 @@ function App() {
         <div className="app-body">
           <Sidebar />
           <Feed />
+          <Widgets />
         </div>
       )}
     </div>
