@@ -17,7 +17,7 @@ function Feed() {
   const user = useSelector(selectUser)
   const [input, setInput] = useState('')
   const [posts, setPosts] = useState([])
-
+  console.log(user)
   // 抓取資料庫此時資料表
   useEffect(() => {
     db.collection('posts')
@@ -38,7 +38,7 @@ function Feed() {
       name: user.displayName,
       description: user.email,
       message: input,
-      photoUrl: user.photoUrl || '',
+      photoUrl: user.photoURL || '',
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     })
 

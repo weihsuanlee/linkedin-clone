@@ -2,15 +2,17 @@
     margin: 0 auto;
     text-align: center;
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
     img{
         object-fit: contain;
         height: 80px;
         margin-top: 20px;
     }
-    form{
+    .login-section{
         display: flex;
         flex-direction: column;
+    }
+    form{
         input{
             width: 350px;
             height: 36px;
@@ -31,12 +33,17 @@
             margin-top: 4px;
         }
     }
-    p{
-        margin-top: 20px;
-    }
+}
+.register-title{
+    margin-top: 16px;
+    margin-bottom: 20px;
 }
 .login-register{
     color: #0074b1;
     cursor: pointer;
     margin-left: 4px;
+}
+.register-section{
+    flex-direction: column;
+    display: none;
 }

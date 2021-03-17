@@ -8,9 +8,28 @@ function Login() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [registerEmail, setRegisterEmail] = useState('')
+  const [registerPassword, setRegisterPassword] = useState('')
   const [profilePic, setProfilePic] = useState('')
   const dispatch = useDispatch()
 
+  const registerShow = () => {
+    const register = document.getElementById('register')
+    const login = document.getElementById('login')
+    const loginRegisterToggle = document.querySelector('.login-register')
+    const memberQuestion = document.querySelector('.member-question')
+    if (register.style.display === 'flex') {
+      register.style.display = 'none'
+      login.style.display = 'flex'
+      loginRegisterToggle.innerHTML = 'Join Us Now'
+      memberQuestion.innerHTML = 'Not a member?'
+    } else {
+      register.style.display = 'flex'
+      login.style.display = 'none'
+      loginRegisterToggle.innerHTML = 'Sign In'
+      memberQuestion.innerHTML = 'Already a member?'
+    }
+  }
   const loginToApp = (e) => {
     e.preventDefault()
     auth
@@ -27,12 +46,13 @@ function Login() {
       })
       .catch((error) => alert(error))
   }
-  const register = () => {
+  const register = (e) => {
+    e.preventDefault()
     if (!name) {
       return alert('Please enter a full name!')
     }
     auth
-      .createUserWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(registerEmail, registerPassword)
       .then((userAuth) => {
         userAuth.user
           .updateProfile({
@@ -58,40 +78,59 @@ function Login() {
     <div className="login">
       <img src="../../images/Linkedin-Logo.png" alt="" />
       <form>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          type="text"
-          value={profilePic}
-          onChange={(e) => setProfilePic(e.target.value)}
-          placeholder="Profile pic URL (Optional)"
-        />
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="Email"
-        />
-        <input
-          value={password}
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <button type="submit" onClick={loginToApp}>
-          Sign In
-        </button>
+        <div className="login-section" id="login">
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Email"
+          />
+          <input
+            value={password}
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+          <button type="submit" onClick={loginToApp}>
+            Sign In
+          </button>
+        </div>
+        <div className="register-section" id="register">
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            placeholder="Full Name"
+          />
+          <input
+            type="text"
+            value={profilePic}
+            onChange={(e) => setProfilePic(e.target.value)}
+            placeholder="Profile pic URL (Optional)"
+          />
+          <input
+            value={registerEmail}
+            onChange={(e) => setRegisterEmail(e.target.value)}
+            type="email"
+            placeholder="Email"
+          />
+          <input
+            value={registerPassword}
+            type="password"
+            onChange={(e) => setRegisterPassword(e.target.value)}
+            placeholder="Password"
+          />
+          <button type="submit" onClick={register}>
+            Register Now
+          </button>
+        </div>
+        <p className="register-title">
+          <span className="member-question">Not a member?</span>
+          <span className="login-register" onClick={registerShow}>
+            Join Us Now
+          </span>
+        </p>
       </form>
-      <p>
-        Not a member?
-        <span className="login-register" onClick={register}>
-          Register Now
-        </span>
-      </p>
     </div>
   )
 }

@@ -19,12 +19,14 @@
     }
     .widgets-info-icon{
         color: gray;
+        font-size: 16px;
     }
 }
 .widgets-article{
     display: flex;
     padding: 10px;
     cursor: pointer;
+    transition: 0.2s;
     &:hover{
         background-color: whitesmoke;
     }

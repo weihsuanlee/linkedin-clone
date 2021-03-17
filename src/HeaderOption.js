@@ -11,7 +11,9 @@ function HeaderOption(props) {
     <div onClick={onClick} className="headerOption">
       {Icon && <Icon className="headerOption-icon" />}
       {avatar && (
-        <Avatar className="headerOption-icon">{user?.displayName[0]}</Avatar>
+        <Avatar className="headerOption-icon" src={user?.photoURL}>
+          {user?.email[0]}
+        </Avatar>
       )}
       <h3 className="headerOption-title">{title}</h3>
     </div>
