@@ -100,7 +100,7 @@ function Login() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             type="text"
-            placeholder="Full Name"
+            placeholder="Full Name (Required)"
           />
           <input
             type="text"
@@ -112,13 +112,13 @@ function Login() {
             value={registerEmail}
             onChange={(e) => setRegisterEmail(e.target.value)}
             type="email"
-            placeholder="Email"
+            placeholder="Email (Required)"
           />
           <input
             value={registerPassword}
             type="password"
             onChange={(e) => setRegisterPassword(e.target.value)}
-            placeholder="Password"
+            placeholder="Password (Required)"
           />
           <button type="submit" onClick={register}>
             Register Now
