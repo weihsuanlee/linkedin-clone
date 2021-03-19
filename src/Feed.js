@@ -6,6 +6,7 @@ import ImageIcon from '@material-ui/icons/Image'
 import SubscriptionsIcon from '@material-ui/icons/Subscriptions'
 import EventNoteIcon from '@material-ui/icons/EventNote'
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay'
+import SendIcon from '@material-ui/icons/Send'
 import Post from './Post'
 import { db } from './firebase'
 import firebase from 'firebase'
@@ -56,8 +57,13 @@ function Feed() {
               onChange={(e) => setInput(e.target.value)}
               placeholder="Start a post"
             />
-            <button onClick={sendPost} type="submit">
-              Send
+            <button
+              onClick={sendPost}
+              type="submit"
+              disabled={!input}
+              className="feed-button"
+            >
+              <SendIcon />
             </button>
           </form>
         </div>

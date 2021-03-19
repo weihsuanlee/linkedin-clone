@@ -1,6 +1,5 @@
-
-*{
-  margin:0;
+* {
+  margin: 0;
 }
 
 body {
@@ -10,9 +9,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f3f2ef;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.MuiSvgIcon-root {
+  vertical-align: middle !important;
 }

@@ -37,9 +37,26 @@
       margin-left: 10px;
       outline-width: 0;
       font-weight: 600;
+      &:focus {
+        outline: none;
+      }
     }
     button {
       display: none;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .feed-input {
+    .feed-button {
+      display: block;
+      border-radius: 50%;
+      border: none;
+      background-color: lightgray;
+      color: white;
+      .MuiSvgIcon-root {
+        font-size: 12px;
+      }
     }
   }
 }
