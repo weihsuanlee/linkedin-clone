@@ -36,6 +36,7 @@
   border-radius: 30px;
   padding: 12px;
   color: black;
+  -webkit-appearance: none;
   flex: 1;
   &:focus {
     outline: none;
@@ -57,7 +58,6 @@
     color: white;
     .MuiSvgIcon-root {
       font-size: 12px;
-      // vertical-align: middle;
     }
   }
 }
