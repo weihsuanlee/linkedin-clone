@@ -6,7 +6,7 @@ import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined'
 import ChatOutlinedIcon from '@material-ui/icons/ChatOutlined'
 import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined'
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined'
-import SendIcon from '@material-ui/icons/Send'
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn'
 import firebase from 'firebase'
 import { db } from './firebase'
 import { selectUser } from './features/userSlice'
@@ -83,7 +83,7 @@ const Post = forwardRef((props, ref) => {
             type="submit"
             onClick={postComment}
           >
-            <SendIcon />
+            <KeyboardReturnIcon />
           </button>
         </form>
         <div className="post-comments">
