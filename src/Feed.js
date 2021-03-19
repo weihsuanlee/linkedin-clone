@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Feed.scss'
-import InputOption from './InputOption'
+import FeedInputOption from './FeedInputOption'
 import CreateIcon from '@material-ui/icons/Create'
 import ImageIcon from '@material-ui/icons/Image'
 import SubscriptionsIcon from '@material-ui/icons/Subscriptions'
@@ -63,11 +63,15 @@ function Feed() {
         </div>
         <div className="feed-inputOptions">
           {/* options */}
-          <InputOption title="Photo" Icon={ImageIcon} color="#70B5F9" />
-          <InputOption title="Video" Icon={SubscriptionsIcon} color="#7FC15E" />
-          <InputOption title="Event" Icon={EventNoteIcon} color="#E7A33E" />
-          <InputOption
-            title="Write Article"
+          <FeedInputOption title="Photo" Icon={ImageIcon} color="#70B5F9" />
+          <FeedInputOption
+            title="Video"
+            Icon={SubscriptionsIcon}
+            color="#7FC15E"
+          />
+          <FeedInputOption title="Event" Icon={EventNoteIcon} color="#E7A33E" />
+          <FeedInputOption
+            title="Article"
             Icon={CalendarViewDayIcon}
             color="lightsalmon"
           />

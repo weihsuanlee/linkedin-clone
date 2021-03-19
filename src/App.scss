@@ -1,13 +1,19 @@
-.app{
-    background-color: #f3f2ef;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.app {
+  background-color: #f3f2ef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
 }
-.app-body{
-    display: flex;
-    max-width: 1200px;
-    padding-top: 35px;
-    padding-left: 20px;
-    padding-right: 20px;
+.app-body {
+  display: flex;
+  max-width: 1200px;
+  padding-top: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (max-width: 768px) {
+  .app-body {
+    width: 90%;
+  }
 }
