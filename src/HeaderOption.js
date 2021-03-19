@@ -16,7 +16,7 @@ function HeaderOption(props) {
         </Avatar>
       )}
       <h3 className="headerOption-title">
-        {title === 'Logout' ? (user ? 'Logout' : 'me') : title}
+        {title === 'Logout' ? (user ? 'Logout' : 'Me') : title}
       </h3>
     </div>
   )

@@ -78,6 +78,7 @@ function Feed() {
         {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
           <Post
             key={id}
+            postId={id}
             name={name}
             description={description}
             message={message}
