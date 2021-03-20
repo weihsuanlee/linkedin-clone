@@ -24,7 +24,13 @@ function Widgets() {
         <InfoIcon className="widgets-info-icon" />
       </div>
       {news.map((news, i) => (
-        <div className="widgets-article" key={i}>
+        <div
+          className="widgets-article"
+          key={i}
+          onClick={() => {
+            window.open(`${news.url}`)
+          }}
+        >
           <div className="widgets-article-left">
             <FiberManualRecordIcon />
           </div>
