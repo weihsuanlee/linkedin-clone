@@ -64,6 +64,25 @@
     }
   }
 }
+.image-upload {
+  position: relative;
+  .image-progress {
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    bottom: 20px;
+    display: none;
+  }
+}
+.image-preview {
+  padding-top: 20px;
+  margin-bottom: 12px;
+  display: none;
+  img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+}
 .feed-inputOptions {
   display: flex;
   justify-content: space-around;

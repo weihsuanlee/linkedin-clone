@@ -36,6 +36,14 @@
 .post-body {
   overflow-wrap: anywhere;
 }
+.post-image {
+  padding-top: 10px;
+  margin-left: -15px;
+  margin-right: -15px;
+  img {
+    max-width: 100%;
+  }
+}
 .post-bottom {
   margin-top: 16px;
 }

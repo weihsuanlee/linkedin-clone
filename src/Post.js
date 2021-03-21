@@ -17,7 +17,15 @@ const Post = forwardRef((props, ref) => {
   const user = useSelector(selectUser)
   const [comments, setComments] = useState([])
   const [comment, setComment] = useState([])
-  const { name, description, message, photoURL, postId, likesCount } = props
+  const {
+    name,
+    description,
+    message,
+    photoURL,
+    postId,
+    likesCount,
+    imageURL,
+  } = props
   useEffect(() => {
     let unsubscribe
     if (postId) {
@@ -56,8 +64,6 @@ const Post = forwardRef((props, ref) => {
       .catch((error) => {
         console.log(error)
       })
-
-    console.log('hello')
   }
 
   return (
@@ -78,6 +84,11 @@ const Post = forwardRef((props, ref) => {
       <div className="post-body">
         <p>{message}</p>
       </div>
+      {imageURL && (
+        <div className="post-image">
+          <img src={imageURL} alt="" />
+        </div>
+      )}
       <div className="post-bottom">
         {likesCount && (
           <div className="post-likes-count">
@@ -85,7 +96,7 @@ const Post = forwardRef((props, ref) => {
             <span>{likesCount}</span>
           </div>
         )}
-        
+
         <div className="post-buttons">
           <InputOption
             Icon={ThumbUpAltOutlinedIcon}
