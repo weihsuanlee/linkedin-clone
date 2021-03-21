@@ -18,7 +18,7 @@ function Feed() {
   const user = useSelector(selectUser)
   const [input, setInput] = useState('')
   const [posts, setPosts] = useState([])
-  console.log(user)
+  // console.log(user)
   // 抓取資料庫此時資料表
   useEffect(() => {
     db.collection('posts')
@@ -40,6 +40,7 @@ function Feed() {
       description: user.email,
       message: input,
       photoURL: user.photoURL || '',
+      likesCount: '',
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     })
 
@@ -85,16 +86,22 @@ function Feed() {
       </div>
       <hr className="feed-line" />
       <FlipMove>
-        {posts.map(({ id, data: { name, description, message, photoURL } }) => (
-          <Post
-            key={id}
-            postId={id}
-            name={name}
-            description={description}
-            message={message}
-            photoURL={photoURL}
-          />
-        ))}
+        {posts.map(
+          ({
+            id,
+            data: { name, description, message, photoURL, likesCount },
+          }) => (
+            <Post
+              key={id}
+              postId={id}
+              name={name}
+              description={description}
+              message={message}
+              photoURL={photoURL}
+              likesCount={likesCount}
+            />
+          )
+        )}
       </FlipMove>
     </div>
   )

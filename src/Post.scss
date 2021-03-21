@@ -36,9 +36,23 @@
 .post-body {
   overflow-wrap: anywhere;
 }
+.post-bottom {
+  margin-top: 16px;
+}
 .post-buttons {
   display: flex;
-  // justify-content: space-evenly;
+}
+.post-likes-count {
+  display: flex;
+  margin-bottom: 6px;
+  img {
+    transform: scaleX(-1);
+    width: 16px;
+    margin-right: 4px;
+  }
+  span {
+    font-size: 12px;
+  }
 }
 .post-comment-inputarea {
   margin-top: 6px;

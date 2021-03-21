@@ -17,7 +17,7 @@ const Post = forwardRef((props, ref) => {
   const user = useSelector(selectUser)
   const [comments, setComments] = useState([])
   const [comment, setComment] = useState([])
-  const { name, description, message, photoURL, postId } = props
+  const { name, description, message, photoURL, postId, likesCount } = props
   useEffect(() => {
     let unsubscribe
     if (postId) {
@@ -47,6 +47,18 @@ const Post = forwardRef((props, ref) => {
       })
     setComment('')
   }
+  const likePost = () => {
+    db.collection('posts')
+      .doc(postId)
+      .update({
+        likesCount: +likesCount + 1,
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+
+    console.log('hello')
+  }
 
   return (
     <div ref={ref} className="post">
@@ -67,11 +79,19 @@ const Post = forwardRef((props, ref) => {
         <p>{message}</p>
       </div>
       <div className="post-bottom">
+        {likesCount && (
+          <div className="post-likes-count">
+            <img src="../../images/likes.svg" alt="" />
+            <span>{likesCount}</span>
+          </div>
+        )}
+        
         <div className="post-buttons">
           <InputOption
             Icon={ThumbUpAltOutlinedIcon}
             title="Like"
             color="gray"
+            likePost={likePost}
           />
           <InputOption Icon={ChatOutlinedIcon} title="Comment" color="gray" />
           <InputOption Icon={ShareOutlinedIcon} title="Share" color="gray" />
